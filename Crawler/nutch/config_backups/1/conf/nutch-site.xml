@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Put site-specific property overrides in this file. -->
+<configuration>
+  <property>
+    <name>http.agent.name</name>
+    <value>nature</value>
+  </property>
+  
+  <property>
+  <name>db.max.outlinks.per.page</name>
+  <value>10</value>
+  <description>The maximum number of outlinks that we'll process for a page.
+  If this value is nonnegative (>=0), at most db.max.outlinks.per.page outlinks
+  will be processed for a page; otherwise, all outlinks will be processed.
+  </description>
+</property>
+
+<property>
+    <name>db.url.filters</name>
+    <value>true</value>
+    <description>Filter urls when updating crawldb</description>
+</property>
+
+<property>
+  <name>http.timeout</name>
+  <value>30000</value>
+  <description>The default network timeout, in milliseconds.</description>
+</property>
+
+<property>
+  <name>plugin.includes</name>
+  <value>protocol-http|urlfilter-regex|parse-(html|tika)|index-(basic|anchor)|indexer-solr|scoring-opic|urlnormalizer-(pass|regex|basic)</value>
+  <description>Regular expression naming plugin directory names to
+  include.  Any plugin not matching this expression is excluded.
+  In any case you need at least include the nutch-extensionpoints plugin. By
+  default Nutch includes crawling just HTML and plain text via HTTP,
+  and basic indexing and search plugins. In order to use HTTPS please enable 
+  protocol-httpclient, but be aware of possible intermittent problems with the 
+  underlying commons-httpclient library. Set parsefilter-naivebayes for classification based focused crawler.
+  </description>
+</property>
+
+<property>
+  <name>fetcher.server.delay</name>
+  <value>1.0</value>
+  <description>The number of seconds the fetcher will delay between 
+   successive requests to the same server. Note that this might get
+   overridden by a Crawl-Delay from a robots.txt and is used ONLY if 
+   fetcher.threads.per.queue is set to 1.
+   </description>
+</property>
+
+<property>
+  <name>http.content.limit</name>
+  <value>131072</value>
+  <description>The length limit for downloaded content using the http://
+  protocol, in bytes. If this value is nonnegative (>=0), content longer
+  than it will be truncated; otherwise, no truncation at all. Do not
+  confuse this setting with the file.content.limit setting.
+  </description>
+</property>
+
+
+<property>
+  <name>fetcher.threads.fetch</name>
+  <value>10</value>
+  <description>The number of FetcherThreads the fetcher should use.
+  This is also determines the maximum number of requests that are
+  made at once (each FetcherThread handles one connection). The total
+  number of threads running in distributed mode will be the number of
+  fetcher threads * number of nodes as fetcher has one map task per node.
+  </description>
+</property>
+
+
+</configuration>
+

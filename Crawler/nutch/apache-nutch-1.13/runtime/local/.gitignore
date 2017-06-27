@@ -1,0 +1,8 @@
+/*
+/*/
+!/conf/
+!/bin/
+!/urls/
+!auto-crawl.sh
+!.gitignore
+!crawl.sh

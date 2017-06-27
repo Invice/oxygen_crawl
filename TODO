@@ -1,0 +1,34 @@
+Seeds suchen und erweitern ~TESTING~
+
+
+Scoring verbessern/überarbeiten
+  - nur Documente mit Score über x generieren/indexieren
+  - naive-bayes ausprobieren 
+
+
+Filterung:
+  - ungewollte mime-types filtern:
+    - application/javascript
+    - ...
+  - weitere seite blockieren:
+    - ...
+  - seite nur einmal pro sprache
+  
+    
+SOLR:
+
+  - Queries schreiben
+  - schema.xml überarbeiten
+    - relevant
+    - posted
+    - doi
+    - date
+
+
+Indexer: 
+  - nur Seiten mit Score über x indexieren (Indexer-Extension/Änderung)
+  - keine Duplikate bzw. ähnliche Artikel indexieren (Indexer-Extension?)
+  - neue Felder hinzufügen (Published Date, DOI) (Parser-Extension?)  
+  
+  
+  

@@ -1,0 +1,36 @@
+1. Solr starten:
+$SOLR_HOME/bin/solr start -p 8983
+
+2. Solr Core erstellen:
+$SOLR_HOME/bin/solr create -c <name>
+
+3. Nutch Crawl Skript ausführen:
+
+  - ./$NUTCH_RUNTIME_HOME/crawl.sh für 3 Iterationen
+  - ./$NUTCH_RUNTIME_HOME/auto-crawl.sh für Ausführung des Nutch Crawlskripts
+
+
+Indexer command:
+bin/nutch index -Dsolr.server.url=http://localhost:8983/solr/OxygenCrawl crawl/crawldb/ -linkdb crawl/linkdb $s3
+
+Hilfe bei solrconfig.xml und schema.xml:
+https://camilotejeiro.wordpress.com/2015/08/27/nutch1-solr5-integration-searching-the-web/
+
+Solr reset Core Index:
+http://localhost:8983/solr/OxygenCrawl/update?stream.body=<delete><query>*:*</query></delete>&commit=true
+
+Solr queries: 
+http://localhost:8983/solr/OxygenCrawl/select?q=[feld]:[regex]&fl=[feld]
+
+Zeige alle Felder:
+http://localhost:8983/solr/OxygenCrawl2/select?q=*:*&wt=csv&rows=0&facet
+
+Leerzeichen = %20
+
+
+
+bin/nutch indexchecker <url> to fetch an url and check the generated tags
+
+publish date custom tag -> plugin (for each site?)
+
+
