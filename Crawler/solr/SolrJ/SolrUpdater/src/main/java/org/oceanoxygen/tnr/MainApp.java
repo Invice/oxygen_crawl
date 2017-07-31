@@ -2,10 +2,13 @@ package org.oceanoxygen.tnr;
 
 import java.io.IOException;
 
-import org.oceanoxygen.tnr.model.Homepage;
-import org.oceanoxygen.tnr.view.ButtonController;
+import org.oceanoxygen.tnr.view.MenuController;
+import org.oceanoxygen.tnr.model.SolrCore;
+import org.oceanoxygen.tnr.model.SolrCoreHandler;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -13,15 +16,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
 
-
-/**
- * Hello world!
- *
- */
 public class MainApp extends Application {
 	
 	private Stage primaryStage;
 	private BorderPane rootLayout;
+	
+	private SolrCoreHandler coreHandler = new SolrCoreHandler();
 	
 	public Stage getPrimaryStage() {
 		return primaryStage;
@@ -34,7 +34,9 @@ public class MainApp extends Application {
 		this.primaryStage.setTitle("OxygenCrawl: SolrUpdater");
 	
 		initRootLayout();
-		addButtonBarToRoot();
+		addMenuBarToRoot();
+		addCoreTableOverviewToRoot();
+		
 	}
 	
 	/*
@@ -57,22 +59,40 @@ public class MainApp extends Application {
 	}
 	
 	/*
-	 * Adds the url bar to root layout.
+	 * Adds the menu bar to root layout.
 	 */
-	public void addButtonBarToRoot() {
+	public void addMenuBarToRoot() {
 		try {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/ButtonBar.fxml"));
-			AnchorPane UrlBar = (AnchorPane) loader.load();
+			loader.setLocation(MainApp.class.getResource("view/MenuBar.fxml"));
+			AnchorPane menuBar = (AnchorPane) loader.load();
 		
 			//Set url bar into the center of root layout.
-			rootLayout.setCenter(UrlBar);
+			rootLayout.setTop(menuBar);
 			
 			//Give the Controller Access to the main app.
-			ButtonController controller = loader.getController();
+			MenuController controller = loader.getController();
 			controller.setMainApp(this);
-			getHostServices();
+			controller.fillComboBox(coreHandler.getCoreList());
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/*
+	 * Adds the central table to the root layout.
+	 */
+	public void addCoreTableOverviewToRoot() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/CoreTableOverview.fxml"));
+			AnchorPane coreTable = (AnchorPane) loader.load();
+		
+			//Set url bar into the center of root layout.
+			rootLayout.setCenter(coreTable);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
