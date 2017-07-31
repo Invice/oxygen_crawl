@@ -17,7 +17,7 @@ Hilfe bei solrconfig.xml und schema.xml:
 https://camilotejeiro.wordpress.com/2015/08/27/nutch1-solr5-integration-searching-the-web/
 
 Solr reset Core Index:
-http://localhost:8983/solr/OxygenCrawl/update?stream.body=<delete><query>*:*</query></delete>&commit=true
+http://localhost:8983/solr/OxygenCrawl_seedTest/update?stream.body=<delete><query>*:*</query></delete>&commit=true
 
 Solr queries: 
 http://localhost:8983/solr/OxygenCrawl/select?q=[feld]:[regex]&fl=[feld]

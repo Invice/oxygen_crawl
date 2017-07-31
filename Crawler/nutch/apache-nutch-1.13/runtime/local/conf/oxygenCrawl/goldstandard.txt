@@ -1,0 +1,31 @@
+deoxygenation 
+marine oxygen  
+dissolved oxygen
+oxygen minimum zone
+suboxic
+hypoxic
+anoxic
+dead zone
+shadow zone 
+ventilation
+fish kill
+denitrification
+anammox
+hydrogen sulfite
+ocean
+sea
+coast
+sulfidic waters
+sulfurization
+anoxia
+hypoxia
+suboxia
+methane oxidation
+oceanic oxygen
+nitrous oxide
+dinitrogen
+
+Vast expanses of oxygen-deficient and nitrite-rich water define the major oxygen minimum zones (OMZs) of the global ocean denitrification and anaerobic ammonium oxidation, are oxygen-sensitive, with some occurring only under strictly anoxic conditions. 
+A major percentage of fixed nitrogen (N) loss in the oceans occurs within nitrite-rich oxygen minimum zones (OMZs) via denitrification and anammox. It remains unclear to what extent ammonium and nitrite oxidation co-occur, either supplying or competing for substrates involved in nitrogen loss in the OMZ core. Assessment of the oxygen (O2) sensitivity of these processes down to the O2 concentrations present in the OMZ core is therefore essential for understanding and modeling nitrogen loss in OMZs.
+The oxygen minimum zone (OMZ) of the Arabian Sea is the thickest of the three oceanic OMZ. It is of global biogeochemical significance because of denitrification in the upper part leading to N2 and N2O production. The residence time of OMZ water is believed to be less than a decade. 
+

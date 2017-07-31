@@ -2,7 +2,8 @@
 /*/
 !/conf/
 !/bin/
-!/urls/
+!/seeds/
+!/run/
 !auto-crawl.sh
 !.gitignore
 !crawl.sh

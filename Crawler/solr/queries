@@ -1,3 +1,16 @@
+q: content:"dead zone" OR content:"oxygen minimum zone" OR content:"dissolved oxygen" OR content:"deoxygenation" OR content:"annamox" OR content:"fish kill" OR content:"denitrification" OR content:"sulfurisation" OR content:"suboxic" OR content:"hypoxic" OR content:"anoxic" OR content:"hypoxia" OR content:"anoxia" OR content:"suboxia"
+fq: url:publication OR url:article OR url:journal OR url:biogeosciences OR url:abstract OR url:theses OR url:thesis OR (url:research AND NOT url:page) OR url:content
+
+
+
+
+
+
+
+
+
+
+
 First attempt:
 
   <lst name="responseHeader">
@@ -45,7 +58,7 @@ Third attempt:
       <str name="indent">true</str>
       <str name="fl">url,score</str>
       <arr name="fq">
-        <str>url:publication OR url:article OR url:journal OR url:biogeosciences OR url:abstract OR url:theses OR url:thesis OR url:research</str>
+        <str>url:publication OR url:article OR url:journal OR url:biogeosciences OR url:abstract OR url:theses OR url:thesis OR url:research OR url:content</str>
         <str>content:gulf OR content:ocean OR content:marine OR content:sea</str>
       </arr>
       <str name="wt">xml</str>
