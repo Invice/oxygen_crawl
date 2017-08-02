@@ -3,12 +3,9 @@ package org.oceanoxygen.tnr;
 import java.io.IOException;
 
 import org.oceanoxygen.tnr.view.MenuController;
-import org.oceanoxygen.tnr.model.SolrCore;
-import org.oceanoxygen.tnr.model.SolrCoreHandler;
+import org.oceanoxygen.tnr.solr.SolrCoreHandler;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +20,9 @@ public class MainApp extends Application {
 	
 	private SolrCoreHandler coreHandler = new SolrCoreHandler();
 	
+	
+	
+	
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}	
@@ -36,7 +36,6 @@ public class MainApp extends Application {
 		initRootLayout();
 		addMenuBarToRoot();
 		addCoreTableOverviewToRoot();
-		
 	}
 	
 	/*

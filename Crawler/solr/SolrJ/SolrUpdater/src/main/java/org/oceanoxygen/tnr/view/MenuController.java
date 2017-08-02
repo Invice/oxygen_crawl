@@ -10,7 +10,6 @@ import javafx.scene.control.ComboBox;
 import org.oceanoxygen.tnr.MainApp;
 import org.oceanoxygen.tnr.model.Homepage;
 import org.oceanoxygen.tnr.util.BrowserUtil;
-import org.oceanoxygen.tnr.model.SolrCore;
 
 public class MenuController {
 	
@@ -51,16 +50,15 @@ public class MenuController {
 		}
 	}
 	
-	public void fillComboBox(ObservableList<SolrCore> coreList) {
+	public void fillComboBox(ObservableList<String> coreList) {
 		
 		coreComboBox.getItems().clear();
 		
 		coreComboBox.getItems().add("Select Solr core...");
 		coreComboBox.getSelectionModel().selectFirst();
 		
-		for (SolrCore core : coreList) {
-			String tmp = core.getName().get();
-			coreComboBox.getItems().add(tmp);
+		for (String core : coreList) {
+			coreComboBox.getItems().add(core);
 		}
 		
 	}

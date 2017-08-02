@@ -1,33 +1,57 @@
 package org.oceanoxygen.tnr.model;
 
+import org.apache.solr.client.solrj.SolrClient;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.oceanoxygen.tnr.solr.Client;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class SolrCore {
 	
-	private StringProperty name;
+	private String serverUrl;
+	private SolrClient client = null;
+	private StringProperty name = null;
+	
+	private static SolrCore core = null;
 
 	/**
 	 * Default constructor.
 	 */
-	SolrCore(){
-		this(null);
+	private SolrCore(){
 	}
 	
 	/**
 	 * Constructor with initial data.
 	 * @param name
 	 */
-	public SolrCore (String name) {
-		this.name = new SimpleStringProperty(name);
+	private SolrCore (String coreName) {
+		
+		name = new SimpleStringProperty(coreName);
+		serverUrl = Client.getServerUrl() +  coreName;
+		client = new HttpSolrClient(serverUrl);
+	}
+	
+	public static SolrCore getInstance(String name) {
+		if (SolrCore.core == null) {
+			SolrCore.core = new SolrCore(name);
+		}
+		return SolrCore.core;
+	}
+	
+
+	public String getName() {
+		return name.get();
 	}
 
-	public StringProperty getName() {
-		return name;
+	public void setCore(String coreName) {
+		name.set(coreName);
+		serverUrl = Client.getServerUrl() + coreName;
+		client = new HttpSolrClient(serverUrl);
 	}
-
-	public void setName(StringProperty name) {
-		this.name = name;
+	
+	public SolrClient getClient() {
+		return client;
 	}
 	
 }
