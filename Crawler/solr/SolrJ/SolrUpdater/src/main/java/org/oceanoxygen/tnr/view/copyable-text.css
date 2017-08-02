@@ -1,0 +1,11 @@
+.copyable-label, .copyable-label:focused {
+    -fx-background-color: transparent ;
+    -fx-background-insets: 0px ;
+}
+
+.text-area {
+	text-area-background: transparent;
+}
+.text-area .content {
+	-fx-background-color : text-area-background;
+}

@@ -3,6 +3,8 @@ package org.oceanoxygen.tnr.view;
 
 
 import javafx.application.HostServices;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -48,6 +50,7 @@ public class MenuController {
 		if (mainApp != null) {
 			BrowserUtil.openUrl(hostServices, Homepage.getHomeName());
 		}
+		System.out.println(mainApp.getCoreHandler().getCurrentCore());
 	}
 	
 	public void fillComboBox(ObservableList<String> coreList) {
@@ -57,9 +60,20 @@ public class MenuController {
 		coreComboBox.getItems().add("Select Solr core...");
 		coreComboBox.getSelectionModel().selectFirst();
 		
-		for (String core : coreList) {
-			coreComboBox.getItems().add(core);
-		}
+		coreComboBox.setItems(coreList);
+	}
+	
+	@FXML
+	public void initialize(){
+		
+//		coreComboBox.getSelectionModel().selectedItemProperty().addListener(
+//				new ChangeListener<String>() {
+//					@Override
+//					public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+//						System.out.println(oldValue);
+//						System.out.println(newValue);
+//			}
+//		});
 		
 	}
 	

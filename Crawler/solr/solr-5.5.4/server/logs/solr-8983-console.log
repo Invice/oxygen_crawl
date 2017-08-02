@@ -930,3 +930,193 @@
 9320047 INFO  (qtp1013423070-15) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=45&wt=javabin&version=2} hits=38844 status=0 QTime=1
 9451490 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
 9465823 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=34&wt=javabin&version=2} hits=38844 status=0 QTime=0
+9972842 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+9976691 INFO  (qtp1013423070-15) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=23&wt=javabin&version=2} hits=38844 status=0 QTime=0
+10016271 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+10030197 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+10363207 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+10516927 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+10753355 INFO  (qtp1013423070-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+10851817 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+10872695 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+11532996 INFO  (qtp1013423070-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+11560710 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+11634728 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+11837734 INFO  (qtp1013423070-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+11966286 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+12909520 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+12921960 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+12958553 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+12965010 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+13378873 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+13388905 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=10&wt=javabin&version=2} hits=38844 status=0 QTime=0
+13482494 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1501688354212} status=0 QTime=0
+13482522 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1501688354238} status=0 QTime=4
+13484942 ERROR (qtp1013423070-14) [   x:OxygenCrawl] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-top.html [/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/conf/admin-extra.menu-top.html]
+13484942 ERROR (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.menu-bottom.html [/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/conf/admin-extra.menu-bottom.html]
+13484942 INFO  (qtp1013423070-14) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/admin/file params={file=admin-extra.menu-top.html&contentType=text/html;charset%3Dutf-8&_=1501688356655} status=404 QTime=0
+13484942 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/admin/file params={file=admin-extra.menu-bottom.html&contentType=text/html;charset%3Dutf-8&_=1501688356655} status=404 QTime=0
+13484962 INFO  (qtp1013423070-20) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/admin/luke params={show=index&numTerms=0&wt=json&_=1501688356676} status=0 QTime=0
+13484966 INFO  (qtp1013423070-15) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/replication params={wt=json&command=details&_=1501688356682} status=0 QTime=0
+13484968 ERROR (qtp1013423070-14) [   x:OxygenCrawl] o.a.s.h.a.ShowFileRequestHandler Can not find: admin-extra.html [/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/conf/admin-extra.html]
+13484968 INFO  (qtp1013423070-14) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/admin/file params={file=admin-extra.html&_=1501688356686} status=404 QTime=0
+13484973 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1501688356687} status=503 QTime=0
+13484974 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/admin/system params={wt=json&_=1501688356684} status=0 QTime=8
+13505239 INFO  (qtp1013423070-20) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&indent=true&rows=0&wt=csv&facet=true&_=1501688376863} hits=38844 status=0 QTime=93
+13569071 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+13574723 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=10&wt=javabin&version=2} hits=38844 status=0 QTime=0
+13600128 INFO  (qtp1013423070-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+13606375 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+14038955 INFO  (qtp1013423070-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+14046643 INFO  (qtp1013423070-20) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+14195198 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+14218319 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+14223092 INFO  (qtp1013423070-15) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+14448126 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+14456036 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+14614309 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+14651412 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+15051169 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+15259111 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+15376148 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+15384271 INFO  (qtp1013423070-20) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+15450352 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+15454787 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+16045894 INFO  (qtp1013423070-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+16054796 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+16214793 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+16336553 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+16345012 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+16524955 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+16531951 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+16761693 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=2
+16770242 INFO  (qtp1013423070-15) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=12&wt=javabin&version=2} hits=38844 status=0 QTime=0
+16830017 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+16840253 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+17128688 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+17133545 INFO  (qtp1013423070-15) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=50&wt=javabin&version=2} hits=38844 status=0 QTime=0
+17274056 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+17302193 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+17304794 INFO  (qtp1013423070-20) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+17393973 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=14
+17397430 INFO  (qtp1013423070-15) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+17852479 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+17931307 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18046637 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18049188 INFO  (qtp1013423070-20) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18102327 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18105572 INFO  (qtp1013423070-14) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18147658 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18149762 INFO  (qtp1013423070-14) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18309274 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18311178 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18452325 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18467691 INFO  (qtp1013423070-20) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18513791 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18516930 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18654773 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18683429 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18694009 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18756844 INFO  (qtp1013423070-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18758608 INFO  (qtp1013423070-19) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+18802757 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+18805463 INFO  (qtp1013423070-18) [   x:OxygenCrawl] o.a.s.c.S.Request [OxygenCrawl]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=38844 status=0 QTime=0
+19398308 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+19411112 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+19586654 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+19594628 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+19625939 INFO  (qtp1013423070-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+19652619 INFO  (qtp1013423070-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+19907867 INFO  (qtp1013423070-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+20884535 INFO  (qtp1013423070-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=1
+20922352 INFO  (ShutdownMonitor) [   ] o.e.j.s.ServerConnector Stopped ServerConnector@8f4ea7c{HTTP/1.1}{0.0.0.0:8983}
+20922353 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1795960102
+20922354 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.c.SolrCore [OxygenCrawl]  CLOSING SolrCore org.apache.solr.core.SolrCore@1173e637
+20922354 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.c.SolrCore [OxygenCrawl_copy]  CLOSING SolrCore org.apache.solr.core.SolrCore@2ac1b50c
+20922354 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.c.SolrCore [rss]  CLOSING SolrCore org.apache.solr.core.SolrCore@592526c7
+20922354 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.c.SolrCore [solr]  CLOSING SolrCore org.apache.solr.core.SolrCore@44309e68
+20922354 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.c.SolrCore [OxygenCrawl_seedTest]  CLOSING SolrCore org.apache.solr.core.SolrCore@4d4a939
+20922354 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.c.SolrCore [tika]  CLOSING SolrCore org.apache.solr.core.SolrCore@51fceb7b
+20922354 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.c.SolrCore [db]  CLOSING SolrCore org.apache.solr.core.SolrCore@747fe2a3
+20922354 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.c.SolrCore [mail]  CLOSING SolrCore org.apache.solr.core.SolrCore@680f637b
+20922355 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+20922355 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=0,transaction_logs_total_number=0}
+20922355 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=0,transaction_logs_total_number=0}
+20922355 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=0,transaction_logs_total_number=0}
+20922355 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=1387774,transaction_logs_total_number=5}
+20922355 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=1524648,transaction_logs_total_number=2}
+20922355 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=1192051,transaction_logs_total_number=1}
+20922355 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.u.DirectUpdateHandler2 closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=0,transaction_logs_total_number=0}
+20922356 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922356 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922356 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922356 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922356 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922356 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922356 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922356 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922356 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922355 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922355 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922355 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922356 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922357 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922356 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922357 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922356 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922356 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922357 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922356 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.u.SolrCoreState Closing SolrCoreState
+20922358 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922358 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922356 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.u.DefaultSolrCoreState SolrCoreState ref count has reached 0 - closing IndexWriter
+20922359 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.u.DefaultSolrCoreState closing IndexWriter with IndexWriterCloser
+20922364 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.c.SolrCore [solr] Closing main searcher on request.
+20922364 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.c.SolrCore [rss] Closing main searcher on request.
+20922365 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.c.SolrCore [tika] Closing main searcher on request.
+20922365 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.c.SolrCore [OxygenCrawl_copy] Closing main searcher on request.
+20922365 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.c.SolrCore [mail] Closing main searcher on request.
+20922365 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922365 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922365 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922365 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922366 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/mail/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/mail/data/index;done=false>>]
+20922366 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/tika/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/tika/data;done=false>>]
+20922366 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl (copy)/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl (copy)/data/index;done=false>>]
+20922366 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.c.SolrCore [OxygenCrawl] Closing main searcher on request.
+20922365 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922366 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl (copy)/data/index
+20922366 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/mail/data/index
+20922367 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl (copy)/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl (copy)/data;done=false>>]
+20922366 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/tika/data
+20922366 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/solr/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/solr/data/index;done=false>>]
+20922366 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.c.SolrCore [db] Closing main searcher on request.
+20922367 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/solr/data/index
+20922367 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/tika/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/tika/data/index;done=false>>]
+20922367 INFO  (coreCloseExecutor-47-thread-1) [   x:OxygenCrawl_copy] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl (copy)/data
+20922367 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/mail/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/mail/data;done=false>>]
+20922367 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/rss/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/rss/data;done=false>>]
+20922367 INFO  (coreCloseExecutor-47-thread-8) [   x:mail] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/mail/data
+20922367 INFO  (coreCloseExecutor-47-thread-6) [   x:tika] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/tika/data/index
+20922367 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922367 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/solr/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/solr/data;done=false>>]
+20922369 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/db/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/db/data/index;done=false>>]
+20922368 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.c.SolrCore [OxygenCrawl_seedTest] Closing main searcher on request.
+20922367 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/rss/data
+20922369 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922369 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/db/data/index
+20922369 INFO  (coreCloseExecutor-47-thread-4) [   x:solr] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/solr/data
+20922369 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/db/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/db/data;done=false>>]
+20922369 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/data;done=false>>]
+20922369 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/rss/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/rss/data/index;done=false>>]
+20922369 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/data
+20922369 INFO  (coreCloseExecutor-47-thread-7) [   x:db] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/db/data
+20922369 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/data/index;done=false>>]
+20922369 INFO  (coreCloseExecutor-47-thread-3) [   x:rss] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/example/example-DIH/solr/rss/data/index
+20922370 INFO  (coreCloseExecutor-47-thread-2) [   x:OxygenCrawl] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl/data/index
+20922371 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.c.CachingDirectoryFactory Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+20922371 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl_seedTest/data/index [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl_seedTest/data/index;done=false>>]
+20922371 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl_seedTest/data/index
+20922371 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.c.CachingDirectoryFactory looking to close /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl_seedTest/data [CachedDir<<refCount=0;path=/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl_seedTest/data;done=false>>]
+20922371 INFO  (coreCloseExecutor-47-thread-5) [   x:OxygenCrawl_seedTest] o.a.s.c.CachingDirectoryFactory Closing directory: /home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr/OxygenCrawl_seedTest/data
+20922373 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@3c0ecd4b{/solr,file:/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr-webapp/webapp/,UNAVAILABLE}{/home/froog/Studium/oxygen_crawl/Crawler/solr/solr-5.5.4/server/solr-webapp/webapp}

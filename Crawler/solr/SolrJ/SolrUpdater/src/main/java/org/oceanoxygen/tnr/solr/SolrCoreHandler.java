@@ -17,7 +17,17 @@ public class SolrCoreHandler {
 	
 //	private String serverUrl = "http://localhost:8983/solr";
 	private ObservableList <String> coreList = FXCollections.observableArrayList();
+	private String currentCore = "sd";
 	
+	public String getCurrentCore() {
+		return currentCore;
+	}
+
+	public void setCurrentCore(String currentCore) {
+		this.currentCore = currentCore;
+	}
+
+
 	/**
 	 * Processes the current list of cores and returns their Names in a list.
 	 * @return

@@ -27,6 +27,9 @@ public class MainApp extends Application {
 		return primaryStage;
 	}	
 	
+	public SolrCoreHandler getCoreHandler() {
+		return coreHandler;
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -36,6 +39,7 @@ public class MainApp extends Application {
 		initRootLayout();
 		addMenuBarToRoot();
 		addCoreTableOverviewToRoot();
+		
 	}
 	
 	/*

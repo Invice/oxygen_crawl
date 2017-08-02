@@ -28,4 +28,8 @@ public class SolrEntry {
 	public StringProperty titleProperty() {
 		return title;
 	}
+	
+	public SolrDocument getDocument() {
+		return document;
+	}
 }
