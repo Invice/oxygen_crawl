@@ -30,9 +30,8 @@
                   </TableView>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <buttons>
-                        <Button mnemonicParsing="false" text="Customize" />
-                      <Button mnemonicParsing="false" onAction="#FetchHandler" text="Fetch" />
-                        <TextField fx:id="rowAmount" alignment="CENTER_RIGHT" text="20" />
+                      <Button mnemonicParsing="false" onAction="#fetchHandler" text="Fetch" />
+                      <TextField fx:id="rowAmount" alignment="CENTER_RIGHT" minWidth="-Infinity" prefWidth="30.0" text="20" />
                     </buttons>
                   </ButtonBar>
                </children>

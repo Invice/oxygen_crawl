@@ -11,10 +11,15 @@ public class SolrEntry {
 	private StringProperty id;
 	private StringProperty title;
 	
+	@SuppressWarnings("unused")
+	private SolrEntry() {
+	}
+
 	public SolrEntry(SolrDocument doc) {
 		this.document = doc;
-		this.id = new SimpleStringProperty(document.getFieldValue("id").toString());
-		this.title = new SimpleStringProperty(document.getFieldValue("title").toString());
+		
+		this.id = new SimpleStringProperty(requestProperty("id"));
+		this.title = new SimpleStringProperty(requestProperty("title"));
 	}
 
 	public String getId() {
@@ -31,5 +36,14 @@ public class SolrEntry {
 	
 	public SolrDocument getDocument() {
 		return document;
+	}
+	
+	public String requestProperty(String propertyName) {
+		Object property = document.getFieldValue(propertyName);
+		if (property != null) {
+			return property.toString();
+		} else {
+			return "";
+		}
 	}
 }

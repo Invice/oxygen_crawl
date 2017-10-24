@@ -11,6 +11,7 @@ import org.apache.solr.common.SolrDocumentList;
 import org.oceanoxygen.tnr.MainApp;
 import org.oceanoxygen.tnr.model.SolrCore;
 import org.oceanoxygen.tnr.model.SolrEntry;
+import org.oceanoxygen.tnr.util.CoreChangeListener;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -23,7 +24,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 
-public class CoreOverviewController {
+public class CoreOverviewController implements CoreChangeListener {
 	
 	@FXML
 	private TextField rowAmount;
@@ -81,6 +82,8 @@ public class CoreOverviewController {
 //		coreName.setText(mainApp.getCoreHandler().getCurrentCore());
 		
 		if (entry != null) {
+			
+			coreName.setText(SolrCore.getInstance().getName());
 			setArea(entry, title, "title");
 			setArea(entry, url, "url");			
 			setArea(entry, posted, "posted");
@@ -90,6 +93,7 @@ public class CoreOverviewController {
 			
 		} 
 		else {
+			coreName.setText("");
 			title.setText("");
 			posted.setText("");
 			url.setText("");
@@ -100,17 +104,18 @@ public class CoreOverviewController {
 	}
 	
 	private void setArea(SolrEntry entry, TextArea field, String fieldName) {
-		Object tmp = entry.getDocument().getFieldValue(fieldName);
-		if (tmp == null) {
-			if (fieldName.equals("posted")) {
-				field.setText("false");
-			} else {
-				field.setText("");
-			}
+		String tmp = entry.requestProperty(fieldName);
+		if (tmp == "" && fieldName.equals("posted")) {
+			field.setText("false");
 		} 
 		else {
-			field.setText(tmp.toString());
+			field.setText(tmp);
 		}
+	}
+	
+	public void onCoreChange() {
+		showDocumentDetails(null);
+		fetchHandler();
 	}
 	
 	
@@ -118,8 +123,15 @@ public class CoreOverviewController {
 	 * Performs a fetch query with the soll server.
 	 */
 	@FXML
-	public void FetchHandler() {
-		SolrClient client = SolrCore.getInstance("OxygenCrawl").getClient();
+	public void fetchHandler() {
+		
+		
+		if (SolrCore.getInstance().getName() == null) {
+			System.err.println("Please select a Solr Core before trying to fetch results.");
+			return;
+		}
+		
+		SolrClient client = SolrCore.getInstance().getClient();
 		SolrQuery query = new SolrQuery();
 		
 		query.setQuery("*:*");
@@ -138,7 +150,7 @@ public class CoreOverviewController {
 			
 			entryTable.setItems(entries);
 			
-		} catch (SolrServerException | IOException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 		}
 	}
@@ -167,7 +179,13 @@ public class CoreOverviewController {
 		entryTable.getSelectionModel().selectedItemProperty().addListener(
 				(observable, oldValue, newValue) -> showDocumentDetails(newValue));
 		
+		// Register as listener to SolrCore.
+		SolrCore.getInstance().registerCoreChangeListener(this);
+		
 	}
 	
+	public void deleteCurrentEntry() {
+		
+	}
 
 }

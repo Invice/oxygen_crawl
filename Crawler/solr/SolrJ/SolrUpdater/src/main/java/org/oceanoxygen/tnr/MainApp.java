@@ -3,6 +3,7 @@ package org.oceanoxygen.tnr;
 import java.io.IOException;
 
 import org.oceanoxygen.tnr.view.MenuController;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.oceanoxygen.tnr.solr.SolrCoreHandler;
 
 import javafx.application.Application;
@@ -81,6 +82,10 @@ public class MainApp extends Application {
 			
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (SolrServerException serverException) {
+			System.err.println(serverException.getMessage());
+			System.err.println("Please make sure to run solr before running this app.");
+			System.exit(0);
 		}
 	}
 	

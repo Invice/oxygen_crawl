@@ -28,6 +28,6 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ComboBox fx:id="coreComboBox" prefWidth="200.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+      <ComboBox fx:id="coreComboBox" onAction="#onCoreChange" prefWidth="200.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
    </children>
 </AnchorPane>

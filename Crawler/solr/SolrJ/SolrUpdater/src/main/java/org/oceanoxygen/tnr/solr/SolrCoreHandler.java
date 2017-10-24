@@ -15,9 +15,8 @@ import javafx.collections.ObservableList;
 
 public class SolrCoreHandler {
 	
-//	private String serverUrl = "http://localhost:8983/solr";
 	private ObservableList <String> coreList = FXCollections.observableArrayList();
-	private String currentCore = "sd";
+	private String currentCore = "";
 	
 	public String getCurrentCore() {
 		return currentCore;
@@ -31,23 +30,16 @@ public class SolrCoreHandler {
 	/**
 	 * Processes the current list of cores and returns their Names in a list.
 	 * @return
+	 * @throws IOException 
 	 */
-	public ObservableList<String> getCoreList(){
+	public ObservableList<String> getCoreList() throws SolrServerException, IOException{
 		
 		coreList.clear();
 		
 //		HttpSolrClient client = new HttpSolrClient(serverUrl);
 		CoreAdminRequest request = new CoreAdminRequest();
 		request.setAction(CoreAdminAction.STATUS);
-		CoreAdminResponse cores = null;
-		
-		try {
-			cores = request.process(Client.getSolrClient());
-		} catch (SolrServerException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		CoreAdminResponse cores = request.process(Client.getSolrClient());
 		
 		for (int i = 0; i < cores.getCoreStatus().size(); i++) {
 			coreList.add(cores.getCoreStatus().getName(i));
