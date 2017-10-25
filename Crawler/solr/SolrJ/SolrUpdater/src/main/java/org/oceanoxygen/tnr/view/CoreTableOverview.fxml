@@ -2,8 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oceanoxygen.tnr.view.CoreOverviewController">
@@ -28,12 +29,18 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                    <buttons>
-                      <Button mnemonicParsing="false" onAction="#fetchHandler" text="Fetch" />
-                      <TextField fx:id="rowAmount" alignment="CENTER_RIGHT" minWidth="-Infinity" prefWidth="30.0" text="20" />
-                    </buttons>
-                  </ButtonBar>
+                  <HBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                  	<Button mnemonicParsing="false" onAction="#fetchHandler" text="Fetch" />
+                    <TextField fx:id="rowAmount" alignment="CENTER_RIGHT" minWidth="-Infinity" prefWidth="50.0" text="20" />
+                     <Separator layoutX="152.0" layoutY="15.0" orientation="VERTICAL" />
+                     <Button fx:id="createDummyButton" mnemonicParsing="false" onAction="#createDummyDocument" />
+                    <Button fx:id="postedButton" onAction="#markSelectedDocumentAsPosted" />
+                     <Separator orientation="VERTICAL" />
+                    <Button fx:id="deleteButton" onAction="#deleteSelectedDocument" />
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@copyable-text.css">

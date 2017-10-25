@@ -1,10 +1,14 @@
 package org.oceanoxygen.tnr.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.solr.client.solrj.SolrClient;
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.common.SolrInputDocument;
 import org.oceanoxygen.tnr.solr.Client;
 import org.oceanoxygen.tnr.util.CoreChangeListener;
 
@@ -24,6 +28,7 @@ public class SolrCore {
 		}
 		return SolrCore.core;
 	}
+	
 	private SolrClient client;
 	
 	private List<CoreChangeListener> coreChangeListeners = new ArrayList<>();
@@ -81,4 +86,43 @@ public class SolrCore {
 		}
 	}
 	
+	
+	
+	public void createDummyDocument() {
+		long num = getDocumentCount() + 1;
+		SolrInputDocument document = new SolrInputDocument();
+		document.addField("id", num);
+		document.addField("title", "name#" + num);
+		try {
+			SolrCore.getInstance().getClient().add(document);
+			SolrCore.getInstance().getClient().commit();
+			
+			
+		} catch (SolrServerException | IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public long getDocumentCount() {
+		SolrQuery q = new SolrQuery("*:*");
+	    q.setRows(0);  // don't actually request any data
+	    try {
+			return client.query(q).getResults().getNumFound();
+		} catch (SolrServerException | IOException e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	
+	public void deleteSelectedDocument(String id) {
+		try {
+			client.deleteById(id);
+			client.commit();
+		} catch (SolrServerException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

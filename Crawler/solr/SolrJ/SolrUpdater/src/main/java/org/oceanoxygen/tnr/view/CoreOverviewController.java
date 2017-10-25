@@ -18,10 +18,14 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 
 public class CoreOverviewController implements CoreChangeListener {
@@ -56,6 +60,15 @@ public class CoreOverviewController implements CoreChangeListener {
 	@FXML
 	private TextArea date;
 	
+	@FXML
+	private Button deleteButton;
+	
+	@FXML
+	private Button postedButton;
+	
+	@FXML
+	private Button createDummyButton;
+	
 	private ObservableList<SolrEntry> entries = FXCollections.observableArrayList();
 	
 	
@@ -83,7 +96,8 @@ public class CoreOverviewController implements CoreChangeListener {
 		
 		if (entry != null) {
 			
-			coreName.setText(SolrCore.getInstance().getName());
+//			coreName.setText(SolrCore.getInstance().getName());
+			coreName.setText(entry.getId());
 			setArea(entry, title, "title");
 			setArea(entry, url, "url");			
 			setArea(entry, posted, "posted");
@@ -107,25 +121,29 @@ public class CoreOverviewController implements CoreChangeListener {
 		String tmp = entry.requestProperty(fieldName);
 		if (tmp == "" && fieldName.equals("posted")) {
 			field.setText("false");
-		} 
-		else {
+		} else {
 			field.setText(tmp);
 		}
 	}
 	
 	public void onCoreChange() {
 		showDocumentDetails(null);
-		fetchHandler();
+		fetchDocuments();
 	}
 	
 	
 	/**
-	 * Performs a fetch query with the soll server.
+	 * Called upon clicking the fetch button.
 	 */
 	@FXML
-	public void fetchHandler() {
-		
-		
+	private void fetchHandler() {
+		fetchDocuments();
+	}
+	
+	/**
+	 * Performs a fetch query with the solr server.
+	 */
+	public void fetchDocuments() {
 		if (SolrCore.getInstance().getName() == null) {
 			System.err.println("Please select a Solr Core before trying to fetch results.");
 			return;
@@ -172,6 +190,26 @@ public class CoreOverviewController implements CoreChangeListener {
 	    });
 		
 		
+		/*
+		 * Icon made by Zurb (https://www.flaticon.com/authors/zurb)
+		 */
+		Image image = new Image(this.getClass().getResourceAsStream("img/trash-bin-16px.png"));
+		deleteButton.setGraphic(new ImageView(image));
+		ButtonBar.setButtonUniformSize(deleteButton, false);
+		
+		/*
+		 * Icon made by Eleonor Wang (https://www.flaticon.com/authors/eleonor-wang)
+		 */
+		image = new Image(this.getClass().getResourceAsStream("img/checked-16px.png"));
+		postedButton.setGraphic(new ImageView(image));
+		
+		/*
+		 * Icon made by Smashicons (https://www.flaticon.com/authors/smashicons)
+		 */
+		image = new Image(this.getClass().getResourceAsStream("img/add-16px.png"));
+		createDummyButton.setGraphic(new ImageView(image));
+		
+		
 		// Reset entry Details.
 		showDocumentDetails(null);
 		
@@ -184,7 +222,25 @@ public class CoreOverviewController implements CoreChangeListener {
 		
 	}
 	
-	public void deleteCurrentEntry() {
+	@FXML
+	public void deleteSelectedDocument() {
+		SolrEntry selectedDocument = entryTable.getSelectionModel().getSelectedItem();
+		
+		int pos = entries.indexOf(selectedDocument);
+		SolrCore.getInstance().deleteSelectedDocument(selectedDocument.getId());
+		fetchDocuments();
+		entryTable.getSelectionModel().select(pos-1);
+	}
+	
+	@FXML
+	public void createDummyDocument() {
+		SolrCore.getInstance().createDummyDocument();
+		fetchDocuments();
+		entryTable.getSelectionModel().select(entries.size()-1);
+	}
+	
+	@FXML
+	public void markSelectedDocumentAsPosted() {
 		
 	}
 

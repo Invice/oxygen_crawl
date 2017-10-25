@@ -19,6 +19,7 @@ public class MenuController {
 	
 	//Reference to the main Application
 	private MainApp mainApp = null;
+	
 	/**
      * The constructor.
      * The constructor is called before the initialize() method.
@@ -34,6 +35,9 @@ public class MenuController {
 		coreComboBox.getSelectionModel().selectFirst();
 		
 		coreComboBox.setItems(coreList);
+		
+		coreComboBox.getSelectionModel().select(0);
+		SolrCore.getInstance().setCore(coreComboBox.getSelectionModel().getSelectedItem());
 	}
 	
 	@FXML
@@ -61,16 +65,23 @@ public class MenuController {
 	 */
 	@FXML
 	private void handleOpenHomepage() {
-
 		if (mainApp != null) {
 			BrowserUtil.openUrl(hostServices, Homepage.getHomeName());
 		}
-		System.out.println(mainApp.getCoreHandler().getCurrentCore());
 	}
 	
 	
 	@FXML
-	private void deleteCurrentEntry() {
-		
+	private void deleteSelectedDocument() {
+		if (mainApp != null) {
+			mainApp.getCoreOverviewController().deleteSelectedDocument();
+		}
+	}
+	
+	@FXML
+	public void createDummyDocument() {
+		if (mainApp != null) {
+			mainApp.getCoreOverviewController().createDummyDocument();
+		}
 	}
 }

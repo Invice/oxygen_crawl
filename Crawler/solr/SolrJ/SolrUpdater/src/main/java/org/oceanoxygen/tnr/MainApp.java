@@ -2,6 +2,7 @@ package org.oceanoxygen.tnr;
 
 import java.io.IOException;
 
+import org.oceanoxygen.tnr.view.CoreOverviewController;
 import org.oceanoxygen.tnr.view.MenuController;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.oceanoxygen.tnr.solr.SolrCoreHandler;
@@ -21,6 +22,8 @@ public class MainApp extends Application {
 	
 	private SolrCoreHandler coreHandler = new SolrCoreHandler();
 	
+	private MenuController menuController = null;
+	private CoreOverviewController coreOverviewController = null;
 	
 	
 	
@@ -72,13 +75,13 @@ public class MainApp extends Application {
 			loader.setLocation(MainApp.class.getResource("view/MenuBar.fxml"));
 			AnchorPane menuBar = (AnchorPane) loader.load();
 		
-			//Set url bar into the center of root layout.
+			// Set url bar into the center of root layout.
 			rootLayout.setTop(menuBar);
 			
-			//Give the Controller Access to the main app.
-			MenuController controller = loader.getController();
-			controller.setMainApp(this);
-			controller.fillComboBox(coreHandler.getCoreList());
+			// Give the Controller Access to the main app.
+			menuController = loader.getController();
+			menuController.setMainApp(this);
+			menuController.fillComboBox(coreHandler.getCoreList());
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -98,10 +101,12 @@ public class MainApp extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/CoreTableOverview.fxml"));
 			AnchorPane coreTable = (AnchorPane) loader.load();
-		
-			//Set url bar into the center of root layout.
-			rootLayout.setCenter(coreTable);
 			
+			// Set url bar into the center of root layout.
+			rootLayout.setCenter(coreTable);
+
+			// Save the controller as a field.
+			coreOverviewController = loader.getController();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -109,5 +114,9 @@ public class MainApp extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public CoreOverviewController getCoreOverviewController () {
+		return this.coreOverviewController;
 	}
 }
