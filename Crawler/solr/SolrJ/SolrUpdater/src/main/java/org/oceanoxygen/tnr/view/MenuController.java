@@ -8,6 +8,7 @@ import javafx.scene.control.ComboBox;
 import org.oceanoxygen.tnr.MainApp;
 import org.oceanoxygen.tnr.model.Homepage;
 import org.oceanoxygen.tnr.model.SolrCore;
+import org.oceanoxygen.tnr.model.SolrEntry;
 import org.oceanoxygen.tnr.util.BrowserUtil;
 
 public class MenuController {
@@ -82,6 +83,20 @@ public class MenuController {
 	public void createDummyDocument() {
 		if (mainApp != null) {
 			mainApp.getCoreOverviewController().createDummyDocument();
+		}
+	}
+	
+	@FXML
+	public void markSelectedDocumentAsPosted() {
+		if (mainApp != null) {
+			mainApp.getCoreOverviewController().markSelectedDocumentAsPosted();;
+		}
+	}
+	
+	@FXML
+	public void markSelectedDocumentAsNotPosted() {
+		if (mainApp != null) {
+			mainApp.getCoreOverviewController().markSelectedDocumentAsNotPosted();;
 		}
 	}
 }

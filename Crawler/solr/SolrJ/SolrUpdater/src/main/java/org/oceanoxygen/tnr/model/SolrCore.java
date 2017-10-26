@@ -8,6 +8,7 @@ import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrInputDocument;
 import org.oceanoxygen.tnr.solr.Client;
 import org.oceanoxygen.tnr.util.CoreChangeListener;
@@ -93,13 +94,13 @@ public class SolrCore {
 		SolrInputDocument document = new SolrInputDocument();
 		document.addField("id", num);
 		document.addField("title", "name#" + num);
+		document.addField("posted", "false");
 		try {
-			SolrCore.getInstance().getClient().add(document);
-			SolrCore.getInstance().getClient().commit();
-			
-			
+			client.add(document);
+			client.commit();
 		} catch (SolrServerException | IOException e) {
-			e.printStackTrace();
+			System.err.println("Could not create dummy document:");
+			System.err.println(e.getMessage());
 		}
 	}
 	
@@ -107,22 +108,66 @@ public class SolrCore {
 	public long getDocumentCount() {
 		SolrQuery q = new SolrQuery("*:*");
 	    q.setRows(0);  // don't actually request any data
+	    long numDocs = 0;
 	    try {
-			return client.query(q).getResults().getNumFound();
+			numDocs = client.query(q).getResults().getNumFound();
 		} catch (SolrServerException | IOException e) {
-			e.printStackTrace();
-			return 0;
+			System.err.println("Could not retrieve number of documents:");
+			System.err.println(e.getMessage());
+		}
+	    return numDocs;
+	}
+	
+	public void deleteDocument(String documentId) {
+		
+			try {
+				client.deleteById(documentId);
+				client.commit();
+			} catch (SolrServerException | IOException e) {
+				System.err.println("Could not delete document:");
+				System.err.println(e.getMessage());
+			}
+	}
+	
+	public void markDocumentAsPosted(SolrDocument document) {
+		try {
+			
+			if (document.getFieldNames().contains("posted")) {
+				document.setField("posted", "true");
+			} else {
+				document.addField("posted", "true");
+			}
+			SolrInputDocument doc = new SolrInputDocument();
+			
+			for (String fieldName : document.getFieldNames()) {
+				doc.addField(fieldName, document.getFieldValue(fieldName));
+			}
+			client.add(doc);
+			client.commit();
+		} catch (SolrServerException | IOException e) {
+			System.err.println("Could not create dummy document:");
+			System.err.println(e.getMessage());
 		}
 	}
 	
-	public void deleteSelectedDocument(String id) {
+	public void markDocumentAsNotPosted(SolrDocument document) {
 		try {
-			client.deleteById(id);
+			
+			if (document.getFieldNames().contains("posted")) {
+				document.setField("posted", "false");
+			} else {
+				document.addField("posted", "false");
+			}
+			SolrInputDocument doc = new SolrInputDocument();
+			
+			for (String fieldName : document.getFieldNames()) {
+				doc.addField(fieldName, document.getFieldValue(fieldName));
+			}
+			client.add(doc);
 			client.commit();
-		} catch (SolrServerException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (SolrServerException | IOException e) {
+			System.err.println("Could not create dummy document:");
+			System.err.println(e.getMessage());
 		}
 	}
 }

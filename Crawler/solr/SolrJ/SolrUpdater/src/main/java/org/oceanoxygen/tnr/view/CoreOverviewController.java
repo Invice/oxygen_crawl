@@ -65,6 +65,7 @@ public class CoreOverviewController implements CoreChangeListener {
 	
 	@FXML
 	private Button postedButton;
+	private boolean isPosted = false;
 	
 	@FXML
 	private Button createDummyButton;
@@ -225,11 +226,12 @@ public class CoreOverviewController implements CoreChangeListener {
 	@FXML
 	public void deleteSelectedDocument() {
 		SolrEntry selectedDocument = entryTable.getSelectionModel().getSelectedItem();
-		
-		int pos = entries.indexOf(selectedDocument);
-		SolrCore.getInstance().deleteSelectedDocument(selectedDocument.getId());
-		fetchDocuments();
-		entryTable.getSelectionModel().select(pos-1);
+		if (selectedDocument != null) {
+			int pos = entries.indexOf(selectedDocument);
+			SolrCore.getInstance().deleteDocument(selectedDocument.getId());
+			fetchDocuments();
+			entryTable.getSelectionModel().select(pos-1);
+		}
 	}
 	
 	@FXML
@@ -241,7 +243,24 @@ public class CoreOverviewController implements CoreChangeListener {
 	
 	@FXML
 	public void markSelectedDocumentAsPosted() {
-		
+		SolrEntry selectedDocument = entryTable.getSelectionModel().getSelectedItem();
+		if (selectedDocument != null) {
+			int pos = entries.indexOf(selectedDocument);
+			SolrCore.getInstance().markDocumentAsPosted(selectedDocument.getDocument());
+			fetchDocuments();
+			entryTable.getSelectionModel().select(pos);
+		}
+	}
+	
+	@FXML
+	public void markSelectedDocumentAsNotPosted() {
+		SolrEntry selectedDocument = entryTable.getSelectionModel().getSelectedItem();
+		if (selectedDocument != null) {
+			int pos = entries.indexOf(selectedDocument);
+			SolrCore.getInstance().markDocumentAsNotPosted(selectedDocument.getDocument());
+			fetchDocuments();
+			entryTable.getSelectionModel().select(pos);
+		}
 	}
 
 }

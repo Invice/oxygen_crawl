@@ -18,8 +18,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Mark document as posted" />
-                  <MenuItem mnemonicParsing="false" text="Mark document as not posted" />
+                  <MenuItem mnemonicParsing="false" onAction="#markSelectedDocumentAsPosted" text="Mark document as posted" />
+                  <MenuItem mnemonicParsing="false" onAction="#markSelectedDocumentAsNotPosted" text="Mark document as not posted" />
                   <MenuItem mnemonicParsing="false" onAction="#createDummyDocument" text="Create dummy document" />
                   <SeparatorMenuItem mnemonicParsing="false" />
               <MenuItem mnemonicParsing="false" onAction="#deleteSelectedDocument" text="Delete selected entry." />
