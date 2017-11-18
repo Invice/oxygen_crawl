@@ -6,29 +6,39 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.CheckMenuItem?>
 
 <AnchorPane prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oceanoxygen.tnr.view.MenuController">
    <children>
       <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="true" text="_File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="true" onAction="#exitApplication" text="_Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="true" text="_Document">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#markSelectedDocumentAsPosted" text="Mark document as posted" />
-                  <MenuItem mnemonicParsing="false" onAction="#markSelectedDocumentAsNotPosted" text="Mark document as not posted" />
-                  <MenuItem mnemonicParsing="false" onAction="#createDummyDocument" text="Create dummy document" />
+                  <MenuItem mnemonicParsing="true" onAction="#markSelectedDocumentAsPosted" text="Mark document as _posted" />
+                  <MenuItem mnemonicParsing="true" onAction="#markSelectedDocumentAsNotPosted" text="Mark document as _not posted" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-              <MenuItem mnemonicParsing="false" onAction="#deleteSelectedDocument" text="Delete selected entry." />
+              <MenuItem mnemonicParsing="true" onAction="#deleteSelectedDocument" text="_Delete selected document" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="true" text="_Index">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleOpenHomepage" text="Visit homepage" />
+            	<MenuItem mnemonicParsing="true" onAction="#createDummyDocument" text="_Add dummy document" />
+            	<MenuItem mnemonicParsing="true" onAction="#deleteDummyDocuments" text="_Delete dummy documents" />
+            	<SeparatorMenuItem mnemonicParsing="false" />
+            	<CheckMenuItem mnemonicParsing="true" fx:id="toggleShowPostedDocuments" onAction="#showPostedDocuments" text="_Show posted documents" />
+            	<SeparatorMenuItem mnemonicParsing="false" />
+              	<MenuItem mnemonicParsing="true" onAction="#cleanIndexByLang" text="_Clean index by lang" />
+            </items>
+          </Menu>
+		  <Menu mnemonicParsing="true" text="_Help">
+            <items>
+              	<MenuItem mnemonicParsing="true" text="_About" />
+                <MenuItem mnemonicParsing="true" onAction="#handleOpenHomepage" text="Visit _homepage" />
             </items>
           </Menu>
         </menus>

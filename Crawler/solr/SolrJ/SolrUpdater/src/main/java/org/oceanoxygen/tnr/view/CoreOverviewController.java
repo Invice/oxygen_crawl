@@ -9,8 +9,8 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.oceanoxygen.tnr.MainApp;
-import org.oceanoxygen.tnr.model.SolrCore;
-import org.oceanoxygen.tnr.model.SolrEntry;
+import org.oceanoxygen.tnr.model.solr.SolrCore;
+import org.oceanoxygen.tnr.model.solr.SolrEntry;
 import org.oceanoxygen.tnr.util.CoreChangeListener;
 
 import javafx.beans.value.ChangeListener;
@@ -30,6 +30,12 @@ import javafx.scene.image.ImageView;
 
 public class CoreOverviewController implements CoreChangeListener {
 	
+	private boolean showPosted = false;
+	
+	public void setShowPosted(boolean showPosted) {
+		this.showPosted = showPosted;
+	}
+
 	@FXML
 	private TextField rowAmount;
 
@@ -40,7 +46,7 @@ public class CoreOverviewController implements CoreChangeListener {
 	private TableColumn<SolrEntry, String> entryColumn;
 	
 	@FXML
-	private TextField coreName;
+	private TextField documentId;
 	
 	@FXML
 	private TextArea title;	
@@ -65,12 +71,11 @@ public class CoreOverviewController implements CoreChangeListener {
 	
 	@FXML
 	private Button postedButton;
-	private boolean isPosted = false;
 	
 	@FXML
 	private Button createDummyButton;
 	
-	private ObservableList<SolrEntry> entries = FXCollections.observableArrayList();
+	private ObservableList<SolrEntry> documentList = FXCollections.observableArrayList();
 	
 	
 	//Reference to the main application.
@@ -93,12 +98,10 @@ public class CoreOverviewController implements CoreChangeListener {
 	 */
 	private void showDocumentDetails(SolrEntry entry) {
 		
-//		coreName.setText(mainApp.getCoreHandler().getCurrentCore());
 		
 		if (entry != null) {
 			
-//			coreName.setText(SolrCore.getInstance().getName());
-			coreName.setText(entry.getId());
+			documentId.setText(entry.getId());
 			setArea(entry, title, "title");
 			setArea(entry, url, "url");			
 			setArea(entry, posted, "posted");
@@ -108,7 +111,7 @@ public class CoreOverviewController implements CoreChangeListener {
 			
 		} 
 		else {
-			coreName.setText("");
+			documentId.setText("");
 			title.setText("");
 			posted.setText("");
 			url.setText("");
@@ -129,7 +132,7 @@ public class CoreOverviewController implements CoreChangeListener {
 	
 	public void onCoreChange() {
 		showDocumentDetails(null);
-		fetchDocuments();
+		updateDocumentList();
 	}
 	
 	
@@ -138,13 +141,14 @@ public class CoreOverviewController implements CoreChangeListener {
 	 */
 	@FXML
 	private void fetchHandler() {
-		fetchDocuments();
+		updateDocumentList();
 	}
 	
 	/**
 	 * Performs a fetch query with the solr server.
+	 * @param posted if true only fetch documents that have been posted.
 	 */
-	public void fetchDocuments() {
+	public void updateDocumentList() {
 		if (SolrCore.getInstance().getName() == null) {
 			System.err.println("Please select a Solr Core before trying to fetch results.");
 			return;
@@ -153,22 +157,19 @@ public class CoreOverviewController implements CoreChangeListener {
 		SolrClient client = SolrCore.getInstance().getClient();
 		SolrQuery query = new SolrQuery();
 		
-		query.setQuery("*:*");
+		query.setQuery("posted:" + showPosted);
 		query.setRows(Integer.parseInt(rowAmount.getText()));
-		
 		
 		try {
 			QueryResponse response = client.query(query);
 			SolrDocumentList documents = response.getResults();
 			
-			entries.clear();
+			documentList.clear();
 			
 			for (SolrDocument doc : documents) {
-				entries.add(new SolrEntry(doc));
+				documentList.add(new SolrEntry(doc));
 			}
-			
-			entryTable.setItems(entries);
-			
+			entryTable.setItems(documentList);
 		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 		}
@@ -227,27 +228,27 @@ public class CoreOverviewController implements CoreChangeListener {
 	public void deleteSelectedDocument() {
 		SolrEntry selectedDocument = entryTable.getSelectionModel().getSelectedItem();
 		if (selectedDocument != null) {
-			int pos = entries.indexOf(selectedDocument);
+			int pos = documentList.indexOf(selectedDocument);
 			SolrCore.getInstance().deleteDocument(selectedDocument.getId());
-			fetchDocuments();
-			entryTable.getSelectionModel().select(pos-1);
+			updateDocumentList();
+			entryTable.getSelectionModel().select(pos > 0 ? pos-1 : pos);			
 		}
 	}
 	
 	@FXML
 	public void createDummyDocument() {
 		SolrCore.getInstance().createDummyDocument();
-		fetchDocuments();
-		entryTable.getSelectionModel().select(entries.size()-1);
+		updateDocumentList();
+		entryTable.getSelectionModel().select(documentList.size()-1);
 	}
 	
 	@FXML
 	public void markSelectedDocumentAsPosted() {
 		SolrEntry selectedDocument = entryTable.getSelectionModel().getSelectedItem();
 		if (selectedDocument != null) {
-			int pos = entries.indexOf(selectedDocument);
+			int pos = documentList.indexOf(selectedDocument);
 			SolrCore.getInstance().markDocumentAsPosted(selectedDocument.getDocument());
-			fetchDocuments();
+			updateDocumentList();
 			entryTable.getSelectionModel().select(pos);
 		}
 	}
@@ -256,11 +257,10 @@ public class CoreOverviewController implements CoreChangeListener {
 	public void markSelectedDocumentAsNotPosted() {
 		SolrEntry selectedDocument = entryTable.getSelectionModel().getSelectedItem();
 		if (selectedDocument != null) {
-			int pos = entries.indexOf(selectedDocument);
+			int pos = documentList.indexOf(selectedDocument);
 			SolrCore.getInstance().markDocumentAsNotPosted(selectedDocument.getDocument());
-			fetchDocuments();
+			updateDocumentList();
 			entryTable.getSelectionModel().select(pos);
 		}
 	}
-
 }

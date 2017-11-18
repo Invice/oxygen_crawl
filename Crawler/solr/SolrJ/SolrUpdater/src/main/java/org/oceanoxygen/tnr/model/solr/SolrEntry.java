@@ -1,4 +1,4 @@
-package org.oceanoxygen.tnr.model;
+package org.oceanoxygen.tnr.model.solr;
 
 import org.apache.solr.common.SolrDocument;
 

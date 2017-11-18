@@ -5,7 +5,9 @@ import java.io.IOException;
 import org.oceanoxygen.tnr.view.CoreOverviewController;
 import org.oceanoxygen.tnr.view.MenuController;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.oceanoxygen.tnr.solr.SolrCoreHandler;
+import org.oceanoxygen.tnr.model.solr.MainClient;
+import org.oceanoxygen.tnr.model.solr.SolrCore;
+import org.oceanoxygen.tnr.model.solr.SolrCoreListHandler;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -20,19 +22,17 @@ public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	
-	private SolrCoreHandler coreHandler = new SolrCoreHandler();
+	private SolrCoreListHandler coreListHandler = new SolrCoreListHandler();
 	
 	private MenuController menuController = null;
 	private CoreOverviewController coreOverviewController = null;
-	
-	
-	
+		
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}	
 	
-	public SolrCoreHandler getCoreHandler() {
-		return coreHandler;
+	public SolrCoreListHandler getCoreListHandler() {
+		return coreListHandler;
 	}
 
 	@Override
@@ -43,7 +43,12 @@ public class MainApp extends Application {
 		initRootLayout();
 		addMenuBarToRoot();
 		addCoreTableOverviewToRoot();
-		
+	}
+	
+	@Override
+	public void stop() {
+		SolrCore.closeInstance();
+		MainClient.closeInstance();
 	}
 	
 	/*
@@ -81,7 +86,7 @@ public class MainApp extends Application {
 			// Give the Controller Access to the main app.
 			menuController = loader.getController();
 			menuController.setMainApp(this);
-			menuController.fillComboBox(coreHandler.getCoreList());
+			menuController.fillComboBox(coreListHandler.getCoreList());
 			
 		} catch (IOException e) {
 			e.printStackTrace();
