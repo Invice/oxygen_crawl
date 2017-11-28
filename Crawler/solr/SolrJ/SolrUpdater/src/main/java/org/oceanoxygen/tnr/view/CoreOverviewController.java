@@ -38,6 +38,9 @@ public class CoreOverviewController implements CoreChangeListener {
 
 	@FXML
 	private TextField rowAmount;
+	
+	@FXML
+	private TextField customQuery;
 
 	@FXML
 	private TableView<SolrEntry> entryTable;
@@ -123,13 +126,12 @@ public class CoreOverviewController implements CoreChangeListener {
 	
 	private void setArea(SolrEntry entry, TextArea field, String fieldName) {
 		String tmp = entry.requestProperty(fieldName);
-		if (tmp == "" && fieldName.equals("posted")) {
-			field.setText("false");
-		} else {
 			field.setText(tmp);
-		}
 	}
 	
+	/**
+	 * Implementation for CoreChangeListener.
+	 */
 	public void onCoreChange() {
 		showDocumentDetails(null);
 		updateDocumentList();
@@ -145,6 +147,7 @@ public class CoreOverviewController implements CoreChangeListener {
 	}
 	
 	/**
+	 * TODO: move query & client to SolrCore
 	 * Performs a fetch query with the solr server.
 	 * @param posted if true only fetch documents that have been posted.
 	 */
@@ -155,13 +158,14 @@ public class CoreOverviewController implements CoreChangeListener {
 		}
 		
 		SolrClient client = SolrCore.getInstance().getClient();
-		SolrQuery query = new SolrQuery();
+		SolrQuery sQuery = new SolrQuery();
 		
-		query.setQuery("posted:" + showPosted);
-		query.setRows(Integer.parseInt(rowAmount.getText()));
+		sQuery.setQuery((showPosted ? "posted:true" : "-posted:true")
+				+ (customQuery.getText().equals("") ? "" : (" AND " + customQuery.getText())));
+		sQuery.setRows(Integer.parseInt(rowAmount.getText()));
 		
 		try {
-			QueryResponse response = client.query(query);
+			QueryResponse response = client.query(sQuery);
 			SolrDocumentList documents = response.getResults();
 			
 			documentList.clear();
@@ -174,7 +178,6 @@ public class CoreOverviewController implements CoreChangeListener {
 			e.printStackTrace();
 		}
 	}
-	
 	
 	@FXML
 	private void initialize() {
@@ -249,7 +252,7 @@ public class CoreOverviewController implements CoreChangeListener {
 			int pos = documentList.indexOf(selectedDocument);
 			SolrCore.getInstance().markDocumentAsPosted(selectedDocument.getDocument());
 			updateDocumentList();
-			entryTable.getSelectionModel().select(pos);
+			entryTable.getSelectionModel().select((pos==documentList.size()&&documentList.size()<20)?pos-1:pos);
 		}
 	}
 	
@@ -260,7 +263,7 @@ public class CoreOverviewController implements CoreChangeListener {
 			int pos = documentList.indexOf(selectedDocument);
 			SolrCore.getInstance().markDocumentAsNotPosted(selectedDocument.getDocument());
 			updateDocumentList();
-			entryTable.getSelectionModel().select(pos);
+			entryTable.getSelectionModel().select((pos==documentList.size()&&documentList.size()<20)?pos-1:pos);
 		}
 	}
 }

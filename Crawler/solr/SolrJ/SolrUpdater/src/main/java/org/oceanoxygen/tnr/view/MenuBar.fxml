@@ -31,6 +31,7 @@
             	<MenuItem mnemonicParsing="true" onAction="#deleteDummyDocuments" text="_Delete dummy documents" />
             	<SeparatorMenuItem mnemonicParsing="false" />
             	<CheckMenuItem mnemonicParsing="true" fx:id="toggleShowPostedDocuments" onAction="#showPostedDocuments" text="_Show posted documents" />
+            	<MenuItem mnemonicParsing="true" onAction="#updatePostedStatus" text="_Update field posted status" />
             	<SeparatorMenuItem mnemonicParsing="false" />
               	<MenuItem mnemonicParsing="true" onAction="#cleanIndexByLang" text="_Clean index by lang" />
             </items>

@@ -125,7 +125,7 @@ public class MenuController {
 	@FXML
 	private void deleteDummyDocuments() {
 		if (mainApp != null) {
-			SolrCore.getInstance().cleanIndex("name", "dummy#");
+			SolrCore.getInstance().cleanIndex("title", "dummy#");
 			mainApp.getCoreOverviewController().updateDocumentList();
 		}
 	}
@@ -135,6 +135,13 @@ public class MenuController {
 		if (mainApp !=  null) {
 			mainApp.getCoreOverviewController().setShowPosted(
 					toggleShowPostedDocuments.selectedProperty().get());
+			mainApp.getCoreOverviewController().updateDocumentList();
+		}
+	}
+	
+	@FXML private void updatePostedStatus() {
+		if (mainApp != null) {
+			SolrCore.getInstance().updatePostedStatus();
 			mainApp.getCoreOverviewController().updateDocumentList();
 		}
 	}

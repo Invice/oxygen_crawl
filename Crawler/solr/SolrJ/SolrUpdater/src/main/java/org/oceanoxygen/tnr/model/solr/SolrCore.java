@@ -8,7 +8,9 @@ import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
 import org.oceanoxygen.tnr.util.CoreChangeListener;
 import org.oceanoxygen.tnr.util.MyRandom;
@@ -95,7 +97,7 @@ public class SolrCore {
 		long num = getFreshDummyId();
 		document.addField("id", num);
 		document.addField("title", "dummy#" + num);
-		document.addField("posted", "false");
+//		document.addField("posted", "false");
 		document.addField("lang", MyRandom.rndLang());
 		
 		try {
@@ -228,6 +230,23 @@ public class SolrCore {
 		if (SolrCore.core != null) {
 			SolrCore.core.closeClient();
 			SolrCore.core = null;
+		}
+	}
+	
+	public void updatePostedStatus() {
+		SolrQuery query = new SolrQuery();
+		query.setQuery("-posted:true AND -posted:false");
+		query.setRows(1000);
+		
+		try {
+			QueryResponse response = client.query(query);
+			SolrDocumentList documents = response.getResults();
+			
+			for (SolrDocument doc : documents) {
+				markDocumentAsNotPosted(doc);
+			}
+		} catch (IOException | SolrServerException e) {
+			e.printStackTrace();
 		}
 	}
 	

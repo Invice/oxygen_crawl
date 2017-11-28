@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oceanoxygen.tnr.view.CoreOverviewController">
    <children>
@@ -21,7 +22,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="entryTable" layoutX="-26.0" layoutY="-16.0" prefHeight="298.0" prefWidth="271.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="entryTable" layoutX="-26.0" layoutY="-16.0" prefHeight="298.0" prefWidth="271.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="entryColumn" prefWidth="85.0" text="Title" />
                     </columns>
@@ -29,18 +30,21 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <HBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
-                  	<Button mnemonicParsing="false" onAction="#fetchHandler" text="Fetch" />
-                    <TextField fx:id="rowAmount" alignment="CENTER_RIGHT" minWidth="-Infinity" prefWidth="50.0" text="20" />
-                     <Separator layoutX="152.0" layoutY="15.0" orientation="VERTICAL" />
-                     <Button fx:id="createDummyButton" mnemonicParsing="false" onAction="#createDummyDocument" />
-                    <Button fx:id="postedButton" onAction="#markSelectedDocumentAsPosted" />
-                     <Separator orientation="VERTICAL" />
-                    <Button fx:id="deleteButton" onAction="#deleteSelectedDocument" />
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </HBox>
+                  <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" prefWidth="271.0">
+                  	<TextField fx:id="customQuery" alignment="CENTER_RIGHT" minWidth="-Infinity" prefWidth="271.0"/>
+                  	<HBox spacing="5.0">
+                  		<Button mnemonicParsing="false" onAction="#fetchHandler" text="Fetch" />
+                    	<TextField fx:id="rowAmount" alignment="CENTER_RIGHT" minWidth="-Infinity" prefWidth="50.0" text="20" />
+                     	<Separator layoutX="152.0" layoutY="15.0" orientation="VERTICAL" />
+                     	<Button fx:id="createDummyButton" mnemonicParsing="false" onAction="#createDummyDocument" />
+                    	<Button fx:id="postedButton" onAction="#markSelectedDocumentAsPosted" />
+                     	<Separator orientation="VERTICAL" />
+                    	<Button fx:id="deleteButton" onAction="#deleteSelectedDocument" />
+                     	<padding>
+                        	<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     	</padding>
+                  	</HBox>
+                  </VBox>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@copyable-text.css">
