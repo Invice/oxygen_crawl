@@ -3,7 +3,6 @@
 
 #Using the bin/crawl script from Nutch destribution
 
-
 SOLRURL="-D solr.server.url=http://localhost:8983/solr/$CORENAME"
 URL_PATH="$NUTCH_RUNTIME_HOME/seeds/$URL_LOCATION"
 

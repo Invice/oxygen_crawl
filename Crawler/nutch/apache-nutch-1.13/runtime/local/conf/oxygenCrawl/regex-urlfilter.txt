@@ -35,7 +35,7 @@
 # do not follow URLs with these words:
 -.*(wp-includes|wordpress|cpan|bitbucket|eclipse|jira|w3|ietf|fedora|debian|windows|blogspot|xmlrpc|svn|apache|sport|bulletin|forum|senate|browse|plugins|module|contact|license|images|about|faq|embassy|travel|foia|library|student|grant|wiki|wlwmanifest|blog|calendar|schedule|publish|contrib|twitter|citation|keywordsearch|gnu|libraries|people|policy|presentation|media|video|theme|guide|manual|upload|music|personal|shop|cart|retail|thumbnail|author|profile|health|whoi|tags|itemid|zenodo|seminar|courses|syndication|finance|mail|phone|youtube|instagram|snapchat|job|amazon|apple|play|google|nginx|fig_tab|pinterest|britannica|powerpoint|natureasia)
 
--.*(tumblr|zeiss|zara|cruise|wedding|sale|weather|adobe|yahoo|meeting|career|education|user|budget|donate|store|alumni|facebook)
+-.*(tumblr|zeiss|zara|cruise|wedding|sale|weather|adobe|yahoo|meeting|career|education|user|budget|donate|store|alumni|facebook|zendesk|fashion|style|football)
 
 
 
