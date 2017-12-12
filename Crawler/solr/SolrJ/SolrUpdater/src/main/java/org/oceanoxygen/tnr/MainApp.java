@@ -40,7 +40,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("OxygenCrawl: SolrUpdater");
-		this.primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("view/img/geomar_logo.png")));
+//		this.primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("view/img/geomar_logo.png")));
 	
 		initRootLayout();
 		addMenuBarToRoot();
