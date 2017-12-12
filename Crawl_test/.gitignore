@@ -4,3 +4,5 @@
 !/conf/
 !/seeds/
 !.gitignore
+!/plugins/
+!/lib/
