@@ -93,8 +93,8 @@ public class MainApp extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SolrServerException serverException) {
-			System.err.println(serverException.getMessage());
 			System.err.println("Please make sure to run solr before running this app.");
+			System.err.println(serverException.getMessage());
 			System.exit(0);
 		}
 	}
