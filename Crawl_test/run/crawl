@@ -13,7 +13,7 @@ fi
 NAME="$1"
 URL_LOCATION="$2"
 CORENAME="$3"
-NUTCH_HOME="/home/froog/Studium/oxygen_crawl/Crawl_test"
+# NUTCH_HOME="/home/froog/Studium/oxygen_crawl/Crawl_test"
 
 # call my_crawl with the given parameters
-source $NUTCH_HOME/bin/my_crawl $4
+source $NUTCH_RUNTIME_HOME/bin/my_crawl $4

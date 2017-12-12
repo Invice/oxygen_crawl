@@ -101,10 +101,7 @@ public class CoreOverviewController implements CoreChangeListener {
 	 * @param entry the entry or null
 	 */
 	private void showDocumentDetails(SolrEntry entry) {
-		
-		
 		if (entry != null) {
-			
 			setArea(entry, url, "url");			
 			setArea(entry, title, "title");
 			setArea(entry, posted, "posted");
@@ -112,7 +109,6 @@ public class CoreOverviewController implements CoreChangeListener {
 			setArea(entry, content, "content");
 			setArea(entry, date, "date");
 			setArea(entry, lang, "lang");
-			
 		} 
 		else {
 			url.setText("");
@@ -157,6 +153,7 @@ public class CoreOverviewController implements CoreChangeListener {
 			System.err.println("Please select a Solr Core before trying to fetch results.");
 			return;
 		}
+		int rowCount = Integer.parseInt(rowAmount.getText());
 		
 		SolrClient client = SolrCore.getInstance().getClient();
 		SolrQuery sQuery = new SolrQuery();
@@ -164,9 +161,10 @@ public class CoreOverviewController implements CoreChangeListener {
 		sQuery.setQuery("*:*");
 		sQuery.addFilterQuery((showPosted ? "posted:true" : "-posted:true")
 				+ (customQuery.getText().equals("") ? "" : (" AND " + customQuery.getText())));
-		sQuery.setRows(Integer.parseInt(rowAmount.getText()));
+		sQuery.setRows(rowCount);
 		sQuery.addOrUpdateSort(new SortClause("documentScore", SolrQuery.ORDER.desc));
 		
+		entryColumn.setText("Documents (" + rowCount + "/" + SolrCore.getInstance().getDocumentCount() + ")");
 		try {
 			QueryResponse response = client.query(sQuery);
 			SolrDocumentList documents = response.getResults();
@@ -227,7 +225,6 @@ public class CoreOverviewController implements CoreChangeListener {
 		
 		// Register as listener to SolrCore.
 		SolrCore.getInstance().registerCoreChangeListener(this);
-		
 	}
 	
 	@FXML

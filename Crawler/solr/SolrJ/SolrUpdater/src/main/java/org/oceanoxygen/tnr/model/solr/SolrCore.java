@@ -89,6 +89,11 @@ public class SolrCore {
 		}
 	}
 	
+	public int getCoreDocumentCount() {
+		
+		return 0;
+	}
+	
 	/**
 	 * Creates a dummy document in the selected core.
 	 */

@@ -5,7 +5,7 @@
 
 SOLRURL="-D solr.server.url=http://localhost:8983/solr/$CORENAME"
 URL_PATH="$NUTCH_RUNTIME_HOME/seeds/$URL_LOCATION"
-NUTCH_HOME="/home/froog/Studium/oxygen_crawl/Crawl_test"
+# NUTCH_HOME="/home/froog/Studium/oxygen_crawl/Crawl_test"
 
 if ! [[ "$1" =~ ^[0-9]+$ ]]
   	then 
@@ -15,7 +15,7 @@ if ! [[ "$1" =~ ^[0-9]+$ ]]
 #    	then
    	  NUMROUNDS=$1
    	  echo "Starting Crawl with $1 rounds."
-   	  $NUTCH_HOME/bin/crawl -i $SOLRURL $URL_PATH $NAME $NUMROUNDS
+   	  $NUTCH_RUNTIME_HOME/bin/crawl -i $SOLRURL $URL_PATH $NAME $NUMROUNDS
 #  else 
 #    #Option to crawl without injecting new URLS
 #    echo "Starting crawl without injecting."  
