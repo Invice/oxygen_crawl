@@ -1,6 +1,6 @@
 /*
-!/run/*
-!/bin/*
-!/conf/*
-!/seed/*
-!/.gitignore
+!/run/
+!/bin/
+!/conf/
+!/seeds/
+!.gitignore

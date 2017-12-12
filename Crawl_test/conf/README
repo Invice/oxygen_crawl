@@ -1,0 +1,2 @@
+To change the used configuration alter the "NUTCH_CONF_DIR" environment variable in
+$NUTCH_RUNTIME_HOME/bin/nutch to point to the configuration you want.

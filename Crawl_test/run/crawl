@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ $# != 4 ]];
+	then
+		echo "Usage: crawl <Crawl Dir> <Seed Dir> <Solr Core Name> <Num Rounds>"
+		echo -e "\tCrawl Dir\tDirectory where the crawl/link/segments dirs are saved"
+    	echo -e "\tSeed Dir\tDirectory in which to look for a seeds file"
+    	echo -e "\tSolr Core Name\tName of the Solr Core on which documents will be indexed"
+    	echo -e "\tNum Rounds\tThe number of rounds to run this crawl for"
+    	exit 1
+fi
+
+NAME="$1"
+URL_LOCATION="$2"
+CORENAME="$3"
+NUTCH_HOME="/home/froog/Studium/oxygen_crawl/Crawl_test"
+
+# call my_crawl with the given parameters
+source $NUTCH_HOME/bin/my_crawl $4

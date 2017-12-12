@@ -1,0 +1,12 @@
+#!/bin/bash
+
+NAME=oxygenCrawl
+URL_LOCATION="oxygenCrawl"
+CORENAME=OxygenCrawl
+
+if ! [[ "$1" =~ ^[0-9]+$ ]]
+  then 
+    echo Please enter the number of crawl rounds as parameter.
+  else
+	source $NUTCH_RUNTIME_HOME/bin/my_crawl $1  
+fi
