@@ -2,5 +2,4 @@ server/*
 !server/solr
 server/solr/*
 !server/solr/BaseCore/
-example/*
 bin/*.pid
