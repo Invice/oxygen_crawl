@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrQuery.SortClause;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
@@ -49,13 +50,13 @@ public class CoreOverviewController implements CoreChangeListener {
 	private TableColumn<SolrEntry, String> entryColumn;
 	
 	@FXML
-	private TextField documentId;
+	private TextArea url;
 	
 	@FXML
 	private TextArea title;	
 
 	@FXML
-	private TextArea url;	
+	private TextArea score;	
 
 	@FXML
 	private TextArea posted;
@@ -104,20 +105,20 @@ public class CoreOverviewController implements CoreChangeListener {
 		
 		if (entry != null) {
 			
-			documentId.setText(entry.getId());
-			setArea(entry, title, "title");
 			setArea(entry, url, "url");			
+			setArea(entry, title, "title");
 			setArea(entry, posted, "posted");
+			setArea(entry, score, "documentScore");
 			setArea(entry, content, "content");
 			setArea(entry, date, "date");
 			setArea(entry, lang, "lang");
 			
 		} 
 		else {
-			documentId.setText("");
+			url.setText("");
 			title.setText("");
 			posted.setText("");
-			url.setText("");
+			score.setText("");
 			content.setText("");
 			date.setText("");
 			lang.setText("");
@@ -160,9 +161,11 @@ public class CoreOverviewController implements CoreChangeListener {
 		SolrClient client = SolrCore.getInstance().getClient();
 		SolrQuery sQuery = new SolrQuery();
 		
-		sQuery.setQuery((showPosted ? "posted:true" : "-posted:true")
+		sQuery.setQuery("*:*");
+		sQuery.addFilterQuery((showPosted ? "posted:true" : "-posted:true")
 				+ (customQuery.getText().equals("") ? "" : (" AND " + customQuery.getText())));
 		sQuery.setRows(Integer.parseInt(rowAmount.getText()));
+		sQuery.addOrUpdateSort(new SortClause("documentScore", SolrQuery.ORDER.desc));
 		
 		try {
 			QueryResponse response = client.query(sQuery);

@@ -64,16 +64,16 @@
                         <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" valignment="TOP" vgrow="ALWAYS" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="30.0" prefWidth="100.0" text="Document Id:" />
+                        <Label prefHeight="30.0" prefWidth="100.0" text="URL:" />
                         <Label minHeight="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Title:" GridPane.rowIndex="1" />
-                        <Label prefHeight="30.0" prefWidth="100.0" text="URL:" GridPane.rowIndex="2" />
-                        <Label prefHeight="30.0" prefWidth="100.0" text="posted:" GridPane.rowIndex="3" />
-                        <Label prefHeight="30.0" prefWidth="100.0" text="lang:" GridPane.rowIndex="4" />
-                        <Label prefHeight="30.0" prefWidth="100.0" text="date:" GridPane.rowIndex="5" />
+                        <Label prefHeight="30.0" prefWidth="100.0" text="Score:" GridPane.rowIndex="2" />
+                        <Label prefHeight="30.0" prefWidth="100.0" text="Posted:" GridPane.rowIndex="3" />
+                        <Label prefHeight="30.0" prefWidth="100.0" text="Lang:" GridPane.rowIndex="4" />
+                        <Label prefHeight="30.0" prefWidth="100.0" text="Date:" GridPane.rowIndex="5" />
                         <Label prefHeight="30.0" prefWidth="100.0" text="Content:" GridPane.rowIndex="6" />
-                        <TextField fx:id="documentId" editable="false" styleClass="copyable-label" text="Document Id" GridPane.columnIndex="1" />
+                        <TextArea fx:id="url" editable="false" styleClass="copyable-label" text="Document Id" GridPane.columnIndex="1" />
                         <TextArea fx:id="title" editable="false" minHeight="-Infinity" prefHeight="30.0" styleClass="copyable-label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextArea fx:id="url" editable="false" minHeight="-Infinity" prefHeight="30.0" styleClass="copyable-label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextArea fx:id="score" editable="false" minHeight="-Infinity" prefHeight="30.0" styleClass="copyable-label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextArea fx:id="posted" editable="false" minHeight="-Infinity" prefHeight="30.0" styleClass="copyable-label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextArea fx:id="lang" editable="false" minHeight="-Infinity" prefHeight="30.0" styleClass="copyable-label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <TextArea fx:id="date" editable="false" minWidth="-Infinity" prefHeight="30.0" styleClass="copyable-label" GridPane.columnIndex="1" GridPane.rowIndex="5" />

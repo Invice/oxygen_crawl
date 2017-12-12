@@ -23,6 +23,8 @@ import java.util.Map.Entry;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.Text;
 import org.apache.nutch.crawl.CrawlDatum;
+import org.apache.nutch.crawl.Inlinks;
+import org.apache.nutch.indexer.NutchDocument;
 import org.apache.nutch.metadata.Nutch;
 import org.apache.nutch.parse.Parse;
 import org.apache.nutch.parse.ParseData;
@@ -35,6 +37,8 @@ public class SimilarityScoringFilter extends AbstractScoringFilter {
 
   private Configuration conf;
   private SimilarityModel similarityModel;
+  private float docScore = 13.37f;
+  
   @Override
   public Configuration getConf() {
     return conf;
@@ -54,10 +58,8 @@ public class SimilarityScoringFilter extends AbstractScoringFilter {
   @Override
   public void passScoreAfterParsing(Text url, Content content, Parse parse)
       throws ScoringFilterException {
-
     float score = similarityModel.setURLScoreAfterParsing(url, content, parse);
-    parse.getData().getContentMeta()
-    .set(Nutch.SCORE_KEY, score+"");
+    parse.getData().getContentMeta().set(Nutch.SCORE_KEY, score+"");
   }
 
   @Override
@@ -66,5 +68,15 @@ public class SimilarityScoringFilter extends AbstractScoringFilter {
       CrawlDatum adjust, int allCount) throws ScoringFilterException {
     similarityModel.distributeScoreToOutlinks(fromUrl, parseData, targets, adjust, allCount);
     return adjust;
+  }
+  
+  @Override
+  public float indexerScore(Text url, NutchDocument doc, CrawlDatum dbDatum,
+     CrawlDatum fetchDatum, Parse parse, Inlinks inlinks, float initScore)
+     throws ScoringFilterException {
+    String sDocScore = parse.getData().getContentMeta().get(Nutch.SCORE_KEY); 
+    docScore = Float.parseFloat(sDocScore);
+    doc.add("documentScore", docScore);
+    return docScore;
   }
 }

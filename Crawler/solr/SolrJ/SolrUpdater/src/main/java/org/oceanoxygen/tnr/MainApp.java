@@ -12,6 +12,7 @@ import org.oceanoxygen.tnr.model.solr.SolrCoreListHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +40,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("OxygenCrawl: SolrUpdater");
+		this.primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("view/img/geomar_logo.png")));
 	
 		initRootLayout();
 		addMenuBarToRoot();

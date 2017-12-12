@@ -1,9 +1,0 @@
-/*
-/*/
-!/conf/
-!/bin/
-!/seeds/
-!/run/
-!auto-crawl.sh
-!.gitignore
-!crawl.sh

@@ -97,7 +97,6 @@ public class SolrCore {
 		long num = getFreshDummyId();
 		document.addField("id", num);
 		document.addField("title", "dummy#" + num);
-//		document.addField("posted", "false");
 		document.addField("lang", MyRandom.rndLang());
 		
 		try {

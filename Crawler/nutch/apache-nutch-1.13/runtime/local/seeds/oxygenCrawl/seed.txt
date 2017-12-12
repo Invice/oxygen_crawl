@@ -1,3 +1,4 @@
+https://wiki.apache.org/nutch/WritingPluginExample
 http://www.nature.com/siteindex/index.html
 http://agupubs.onlinelibrary.wiley.com/hub/
 http://pubs.acs.org/loi/esthag

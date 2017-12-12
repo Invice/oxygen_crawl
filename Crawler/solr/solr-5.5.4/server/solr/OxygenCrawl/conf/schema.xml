@@ -334,6 +334,7 @@
     
     <!-- fields for ocean-oxygen plugin -->
     <field name="posted" type="boolean" stored="true" indexed="true" default="false"/>
+    <field name="documentScore" type="float" stored="true" indexed="true"/>
 
 
     <!-- fields for index-basic plugin -->

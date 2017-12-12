@@ -91,6 +91,8 @@
      <ant dir="urlnormalizer-querystring" target="deploy"/>
      <ant dir="urlnormalizer-regex" target="deploy"/>
      <ant dir="urlnormalizer-slash" target="deploy"/>
+     <!-- OceanOxygen Plugin                                  -->
+     <ant dir="index-oceanoxygen" target="deploy" />
   </target>
 
   <!-- ====================================================== -->
